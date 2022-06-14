@@ -1,0 +1,57 @@
+/*Think about your favorite apps, and pick one that stores your data- like a game 
+that stores scores, an app that lets you post updates, etc. 
+Now in this project, you're going to imagine that the app stores your data 
+in a SQL database (which is pretty likely!), and write SQL statements 
+that might look like their own SQL.
+
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.*
+
+
+/* What does the app's SQL look like?*/
+
+CREATE TABLE player_info (
+    id INTEGER primary key autoincrement, 
+    name TEXT,
+    email TEXT,
+    phone INTEGER,
+    age INTEGER,
+    gender TEXT,
+    gamer_tag TEXT,
+    server TEXT,
+    game_time_played_hours INTEGER,
+    wins INTEGER,
+    losses INTEGER,
+    system TEXT);
+    
+    
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("erik negrete", "en@gmail.com", "999-999-9999", "31", "male", "gamer_erik", "socal", "123000", "137", "25", "PS4");
+
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("edgar moreno", "em81@gmail.com", "111-111-1111", "41", "male", "gamer_guy81", "socal", "12000", "97", "125", "PS4");
+    
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("albert lopez", "al02@gmail.com", "555-555-5555", "20", "male", "badboy_al", "socal", "203000", "250", "67", "PS4"); 
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("eliana moreno", "eli91@gmail.com", "777-777-7777", "31", "female", "grillgamer", "socal", "35000", "101", "95", "xbox");
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("daniel garcia", "dan@gmail.com", "333-333-3333", "24", "male", "ghostkid87", "socal", "285000", "175", "30", "desktop");
+INSERT INTO player_info (name, email, phone, age, gender, gamer_tag, server, game_time_played_hours, wins, losses, system) 
+    values ("armando gonzalez", "mando@gmail.com", "222-222-2222", "44", "male", "mando81", "northcal", "85000", "75", "130", "desktop");
+    
+SELECT * FROM player_info;
+
+UPDATE player_info set gamer_tag = "erik91" 
+    WHERE id = 1;
+
+
+SELECT * FROM player_info;
+
+
+DELETE FROM player_info
+WHERE id = 3;
+
+SELECT * FROM player_info
