@@ -1,0 +1,69 @@
+/* Create table of famouse Actors, include one show/movie and link married actors togther*/
+
+
+/* Create table about the people and what they do here */
+
+
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    movie_show TEXT);
+    
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Grace Gealey", "37", "Empire");    
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Megan Mullally", "63", "Why him?");  
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Anna Paquin", "39", "The Good Dinosaur");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Nancy Carell", "55", "The Office");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Mila Kunis", "38", "That 70's Show");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Johanna Braddy", "34", "Game of Thrones");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Alexis Bledel", "40", "Mad Men");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Kaitlin Olson", "46", "Finding Dory");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Mary Elizabeth Ellis", "43", "New GIrl");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Alyson Hannigan", "48", "How I Met Your Mother");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Samuel L. Jackson", "73", "The Avengers");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Tom Holland", "26", "Spider-Man");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Dwayne Johnson", "50", "Fast Five");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Robert Downey, Jr.", "57", "Iron Man");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Daniel Craig", "54", "James Bond:Skyfall");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Emma Stone", "33", "The Amazing Spider-Man");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Scarlett Johansson", "37", "The Avengers");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Salma Hayek", "55", "Once Upon a Time in Mexico");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Alexis Denisof", "56", "How I Met Your Mother");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Charlie Day", "46", "Fist Fight");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Rob McElhenney", "45", "It's Always Sunny in Philadelphia");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Vincent Kartheiser", "43", "Mad Men");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Freddie Stroma", "35", "Game of Thrones");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Ashton Kutcher", "44", "That 70's Show");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Steve Carell", "59", "The Office");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Stephen Moyer", "52", "True Blood");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Nick Offerman", "51", "Parks and Recreation");
+INSERT INTO actors (fullname, age, movie_show) VALUES ("Trai Byers", "38", "Empire");
+
+
+
+
+
+
+CREATE TABLE jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name_id INTEGER,
+    Spouse_id INTEGER);
+    
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("1", "28");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("2", "27");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("3", "26");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("4", "25");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("5", "24");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("6", "23");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("7", "22");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("8", "21");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("9", "20");
+INSERT INTO jobs (name_ID, spouse_id) VALUES ("10", "19");
+
+
+SELECT a.fullname, a.age, a.movie_show, b.fullname as spouse, b.age, b.movie_show FROM jobs
+    JOIN actors a
+    on jobs.name_id = a.id
+    JOIN actors b
+    ON jobs.spouse_id = b.id
+    
